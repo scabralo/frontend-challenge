@@ -7,5 +7,26 @@ html, body {
 }
 
 /*---- Header ----*/
+header {
+  color: white;
+  background: #16216A;
+  height: 5em;
+}
+#location-search {
+  flex-grow: 1;
+  padding-left: 5em;
+}
+#location-search input {
+  height: 2.5em;
+}
+#location-input {
+  flex-grow: 1;
+  max-width: 30em;
+  padding: 0 .5em 0 1em;
+}
+#location-search input[type=submit] {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
 
 /*---- Footer ----*/

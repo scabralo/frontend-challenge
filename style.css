@@ -30,3 +30,10 @@ header {
 }
 
 /*---- Footer ----*/
+footer {
+  background: #E6E6E6;
+  height: 5em;
+}
+footer p {
+  margin: 0;
+}

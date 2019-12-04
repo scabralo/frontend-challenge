@@ -29,6 +29,43 @@ header {
   border-top-left-radius: 0;
 }
 
+/*---- Main ----*/
+main {
+  height: calc(100% - 10em);
+  min-height: 500px;
+  position: relative;
+}
+#map-container {
+  height: 100%;
+}
+.weather-info-container {
+  position: absolute;
+  z-index: 1;
+  top: 1em;
+  right: 1em;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1.25em;
+  border-radius: 1em;
+}
+.weather-message-wrapper {
+  padding-top: .5em;
+  margin-top: .5em;
+  border-top: solid 3px rgba(22, 33, 106, .7);
+}
+.weather-info-container p {
+  margin: 0;
+  line-height: 1em;
+}
+.current-temp {
+  font-size: 5em;
+}
+.max-min-container {
+  padding-left: 1em;
+}
+.max-min-container p {
+  font-size: 1.25em;
+}
+
 /*---- Footer ----*/
 footer {
   background: #E6E6E6;

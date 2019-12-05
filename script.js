@@ -390,4 +390,13 @@ $(function() {
       onClickHandler(event)
     })
   }
+
+  /*
+   * This function handles the click event on the data layer markers
+   */
+  function onClickHandler(event) {
+    const markerInfo = event.feature.h
+    populateOverlay(markerInfo)
+    $('#overlay').fadeIn(300);
+  }
 })

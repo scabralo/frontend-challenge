@@ -20,4 +20,9 @@ $(function() {
   const $bikesAvailable = $('#bikes-available')
   const $docksAvailable = $('#docks-available')
   const $stationAddress = $('#station-address')
+
+  $locationForm.submit(function(event) {
+    onSubmitHandler(event)
+  })
+
 })

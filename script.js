@@ -237,4 +237,29 @@ $(function() {
     getWeatherData({lat: 39.95228, lng:-75.16245})
     indegoStations()
   }
+
+  /*
+   * A simple function that returns the formated object for the tempData variable
+   * @param tempDataObj The object returned by the weather API
+   * @return obj The formatted object with the temp data
+   */
+  function tempDataFormater(tempDataObj) {
+    let messageText = ''
+    const tempId = tempDataObj.weather[0].id
+    //const tempId = 702
+    
+
+    if(tempId >= 701 && tempId < 782) {
+      messageText = 'Terrible atmospheric conditions. Be careful!'
+    }
+
+    return {
+      temp: Math.floor(tempDataObj.main.temp),
+      tempMax: Math.floor(tempDataObj.main.temp_max),
+      tempMin: Math.floor(tempDataObj.main.temp_min),
+      tempIcon: 'http://openweathermap.org/img/wn/'+ tempDataObj.weather[0].icon + '.png',
+      message: messageText,
+    }
+  }
+
 })

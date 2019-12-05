@@ -1,5 +1,5 @@
 $(function() {
-  
+
   let tempData = {
     temp: '',
     tempMax: '',
@@ -414,5 +414,7 @@ $(function() {
   $('#close').click(function() {
     $('#overlay').fadeOut(300);
   });
+
+  init()
 
 })

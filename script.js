@@ -320,4 +320,30 @@ $(function() {
     })
   }
 
+  /*
+   * This function handles the Result returned by the geocoder
+   * @param location Location objec with lat and lng properties
+   * @param status The status code returned by the geocoder
+   */
+  function geocoderResultHandler(location, status) {
+    if(status === 'OK') {
+
+      const newLocationObj = {
+        lat: location.lat(),
+        lng: location.lng()
+      }
+
+      marker && marker.setMap(null)
+      marker = new google.maps.Marker({
+        position: newLocationObj
+      })
+      marker.setMap(map)
+
+      map.setCenter(location)
+
+      getWeatherData(newLocationObj)
+
+    }
+  }
+
 })

@@ -387,7 +387,7 @@ $(function() {
       })
     })
     map.data.addListener('click', function(event) {
-      mouseOverMarker(event)
+      onClickHandler(event)
     })
   }
 })

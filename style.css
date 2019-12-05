@@ -74,3 +74,39 @@ footer {
 footer p {
   margin: 0;
 }
+@media (max-width: 767px) {
+  header {
+    height: unset;
+    padding: 1em 0;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: .5em;
+  }
+  #location-search {
+    padding-left: 0;
+  }
+  #location-input {
+    max-width: unset;
+  }
+  footer {
+    height: 2.5em;
+  }
+  main {
+    height: calc(100% - 11.25em);
+    min-height: unset;
+  }
+  .current-temp {
+    font-size: 2.5em;
+  }
+  .max-min-container p {
+    font-size: 1em;
+  }
+  .weather-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .weather-info-container {
+    max-width: 12em;
+  }
+}

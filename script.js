@@ -262,4 +262,23 @@ $(function() {
     }
   }
 
+  /*
+  * This function gets the temperature information from OpenWeather (https://openweathermap.org/current)
+  * @param lat The latitude of the address provided by the user
+  * @param lon The longitude of the address provided by the user
+  */
+  function getWeatherData(location) {
+    const api = 'c6cef3844c23c32ef3065e03fcaa8716'
+    const url = "https://api.openweathermap.org/data/2.5/weather?lat=" + location.lat + "&lon=" + location.lng + "&units=imperial&appid=" + api
+
+    $.ajax({
+      url,
+      method: 'GET'
+    }).then(function(resp){
+      console.log('resp',resp)
+      tempData = tempDataFormater(resp)
+      updateTempInformation(tempData)
+    })
+  }
+
 })

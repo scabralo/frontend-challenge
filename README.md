@@ -1,4 +1,16 @@
-## P'unk Avenue frontend challenge
+## P'unk Avenue Frontend Challenge by Sergio Cabral
+
+In this version, the map of the city starts populated with the location of all the Indego Stations. Based on the color you can see how many bikes are available, this same number is shown as a label in the middle of the location marker. The user can see how many docks are available hovering over the marker to see the tool-tip containing this information. More information about the station, in this case the address, can be seen by clicking on the marker and an overlay with said information will appear.
+
+You can find a live version of the app here: [Indego Locator](http://sergiocabral.io/punkave/)
+
+**Tech Stack**
+* HTML
+* CSS
+* jQuery (v3.4.1)
+* Bootstrap (v4.4.1)
+
+## Project Description
 
 Using HTML, CSS, and one of the following:
 

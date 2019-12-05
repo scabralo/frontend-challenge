@@ -281,4 +281,29 @@ $(function() {
     })
   }
 
+  /*
+   * This function updates the information regarding the temperature for the location provided by the user
+   * @param tempObj The formatted object containing the temp data
+   */
+  function updateTempInformation(tempObj) {
+    const $temp = $('.temp-value')
+    const $tempMax = $('.max-temp-value')
+    const $tempMin = $('.min-temp-value')
+    const $weatherIcon = $('.weather-icon')
+    const $weatherMessageWrapper = $('.weather-message-wrapper')
+    const $message = $('.weather-message')
+
+    $temp.text(tempObj.temp)
+    $tempMax.text(tempObj.tempMax)
+    $tempMin.text(tempObj.tempMin)
+    $weatherIcon.attr('src', tempObj.tempIcon)
+
+    if(tempObj.message !== '') {
+      $message.text(tempObj.message)
+      $weatherMessageWrapper.removeClass('hidden')
+    } else {
+      $weatherMessageWrapper.addClass('hidden')
+    }
+    
+  }
 })

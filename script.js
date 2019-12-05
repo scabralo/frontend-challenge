@@ -410,4 +410,9 @@ $(function() {
     $docksAvailable.text(info.docksAvailable.toString())
     $stationAddress.text(info.addressStreet)
   }
+
+  $('#close').click(function() {
+    $('#overlay').fadeOut(300);
+  });
+
 })

@@ -306,4 +306,18 @@ $(function() {
     }
     
   }
+
+  /*
+   * This function will take care of the submit event for the address form.
+   */
+  function onSubmitHandler(event) {
+    event.preventDefault()
+    const address = $locationInput.val().trim()
+    $locationInput.val('')
+
+    geocoder.geocode({ address }, function(results, status) {
+      geocoderResultHandler(results[0].geometry.location, status)
+    })
+  }
+
 })

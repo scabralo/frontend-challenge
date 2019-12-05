@@ -399,4 +399,15 @@ $(function() {
     populateOverlay(markerInfo)
     $('#overlay').fadeIn(300);
   }
+
+  /*
+   * This function populates the data inside the overlay that's shown when users click on a marker on the data layer
+   * @param info An object containing all the info related to the marker that was clicked by the user
+   */
+  function populateOverlay(info) {
+    $stationName.text(info.name)
+    $bikesAvailable.text(info.bikesAvailable.toString())
+    $docksAvailable.text(info.docksAvailable.toString())
+    $stationAddress.text(info.addressStreet)
+  }
 })

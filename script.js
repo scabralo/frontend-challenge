@@ -346,4 +346,48 @@ $(function() {
     }
   }
 
+  /*
+   * This function gets the Indego Stations from their API and places them on the map
+   */
+  function indegoStations() {
+    const url = 'https://dkw6qugbfeznv.cloudfront.net/'
+    
+    map.data.loadGeoJson(url)
+    map.data.setStyle(function(feature) {
+
+      const bikes = feature.getProperty("bikesAvailable")
+      const docks = feature.getProperty("docksAvailable")
+      const title = bikes.toString() + ' bikes and ' + docks.toString() + ' docks available'
+      const text =  bikes.toString()
+
+      const label = {
+        text,
+        fontSize: '18px',
+        fontWeight: '500'
+      }
+
+      switch(true) {
+        case (bikes === 0) :
+          icon = 'assets/imgs/map-marker-red.png'
+          label.color = '#D41919'
+          break
+        case (bikes <= 5) :
+          icon = 'assets/imgs/map-marker-yellow.png'
+          label.color = '#D4B319'
+          break
+        default :
+          icon = 'assets/imgs/map-marker-green.png'
+          label.color = '#008000'
+          break
+      }
+      return ({
+        title,
+        icon,
+        label
+      })
+    })
+    map.data.addListener('click', function(event) {
+      mouseOverMarker(event)
+    })
+  }
 })
